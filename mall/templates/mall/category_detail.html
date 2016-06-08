@@ -1,0 +1,24 @@
+{% extends 'mall/base.html' %}
+
+{% block content %}
+
+<h1>{{ category.title }}</h1>
+<hr>
+
+<h2>Shops</h2>
+<div class = 'container jumbotron'>
+
+
+<ol>
+    {% for shop in category.shop_set.all %}
+      <li>
+        {{ shop.title }}
+      </li>
+    {% empty %}
+      <h5>등록된 Shop이 없습니다.</h5>
+    {% endfor %}
+  </ol>
+<ul>
+
+</div>
+{% endblock content %}
