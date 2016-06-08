@@ -12,3 +12,7 @@ def index(request):
 		'category_list':category_list,
 		'review_list':review_list,
 		})
+
+def category_detail(request, pk):
+	category = Category.objects.get(pk=pk)
+	return render(request, 'mall/category_detail.html', {'category':category, })

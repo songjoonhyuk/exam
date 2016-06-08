@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$' , 'mall.views.index'),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^mall/', include('mall.urls', namespace='mall')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

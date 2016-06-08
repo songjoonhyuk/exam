@@ -7,8 +7,10 @@
 <ul>
   {% for category in category_list %}
 <li>
-  	{{ category.id }}
-    {{ category.title }}
+	<a href = "{% url 'mall:category_detail' category.pk %}">
+   		{{ category.id }}
+		{{ category.title }}
+	</a>
 </li>
   {% endfor %}
 </ul>
