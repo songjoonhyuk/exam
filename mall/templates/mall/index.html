@@ -1,4 +1,40 @@
 {% extends 'mall/base.html' %}
-{% block content %}
 
+{% block content %}
+<h2>Categories</h2>
+<div class = 'container jumbotron'>
+
+<ul>
+  {% for category in category_list %}
+<li>
+  	{{ category.id }}
+    {{ category.title }}
+</li>
+  {% endfor %}
+</ul>
+</div>
+
+<h2>Shops</h2>
+<div class = 'container jumbotron'>
+
+<ul>
+  {% for shop in shop_list %}
+<li>
+    {{ shop.title }}
+</li>
+  {% endfor %}
+</ul>
+</div>
+
+<h2>Reviews</h2>
+<div class = 'container jumbotron'>
+
+<ul>
+  {% for review in review_list %}
+<li>
+    {{ review.content }}
+</li>
+  {% endfor %}
+</ul>
+</div>
 {% endblock content %}
