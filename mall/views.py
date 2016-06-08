@@ -16,3 +16,7 @@ def index(request):
 def category_detail(request, pk):
 	category = Category.objects.get(pk=pk)
 	return render(request, 'mall/category_detail.html', {'category':category, })
+
+def shop_detail(request, category_pk, pk):
+	shop = Shop.objects.get(pk=pk)
+	return render(request, 'mall/shop_detail.html', {'shop':shop, })

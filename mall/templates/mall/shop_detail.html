@@ -1,0 +1,20 @@
+{% extends 'mall/index.html' %}
+{% block content %}
+
+<h1>{{ shop.title }}</h1>
+<hr>
+	{{ shop.content|linebreaks }}
+<hr>
+
+	<img src="{{ shop.photo1.url }}">
+
+<!--
+	<img src="{#{ shop.photo2.url }#}">
+	<img src="{#{ shop.photo3.url }#}">
+ -->
+
+
+<hr>
+
+
+{% endblock content %}
