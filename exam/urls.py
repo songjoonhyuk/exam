@@ -7,6 +7,7 @@ from django.http import HttpResponse
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$' , 'mall.views.index'),
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
