@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Category, Shop, Review
+from mall.forms import ShopForm
 
 # Create your views here.
 
@@ -20,3 +21,13 @@ def category_detail(request, pk):
 def shop_detail(request, category_pk, pk):
 	shop = Shop.objects.get(pk=pk)
 	return render(request, 'mall/shop_detail.html', {'shop':shop, })
+
+def shop_new(request, category_pk, pk):
+	if request.method == 'POST':
+		form = ShopForm(request.POST, request.FILES)
+		if form.is_valid():
+			shop = form.save()
+			return redirect('mall:shop_detail', category_pk, shop.pk)
+	else:
+		form = ShopForm()
+	return render(request, 'mall/shop_new.html', {'form':form,})
